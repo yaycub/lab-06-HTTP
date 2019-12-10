@@ -18,4 +18,36 @@ describe('createResponse', () => {
         expect(res.text).toEqual('poop scoot');
       });
   });
+
+  it('should return <h1>red</h1> with GET /red', async() => {
+    return await request(app)
+      .get('/red')
+      .then(res => {
+        expect(res.text).toEqual('<h1>red</h1>');
+      });
+  });
+
+  it('should return <h1>green</h1> with GET /green', async() => {
+    return await request(app)
+      .get('/green')
+      .then(res => {
+        expect(res.text).toEqual('<h1>green</h1>');
+      });
+  });
+
+  it('should return <h1>blue</h1> with GET /blue', async() => {
+    return await request(app)
+      .get('/blue')
+      .then(res => {
+        expect(res.text).toEqual('<h1>blue</h1>');
+      });
+  });
+
+  // it('should return Not Found when requesting an empty endpoint', async() => {
+  //   return await request(app)
+  //     .get('/orange')
+  //     .then(res => {
+  //       expect(res.text).toEqual('Not Found');
+  //     });
+  // });
 });
